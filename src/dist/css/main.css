@@ -230,6 +230,48 @@
   text-align: center;
 }
 
+.chart {
+  margin: 1rem;
+}
+.chart figure {
+  border-bottom: 1px solid;
+  border-left: 1px solid;
+  height: 20rem;
+  margin: 1rem;
+  margin-left: 0.5rem;
+  margin-bottom: 2.5rem;
+  padding: 0;
+  position: relative;
+  width: 95%;
+}
+.chart_line-chart {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.chart_data-point {
+  background-color: white;
+  border: 2px solid lightblue;
+  border-radius: 50%;
+  height: 12px;
+  position: absolute;
+  width: 12px;
+}
+.chart_data-point__label {
+  rotate: -90deg;
+  position: absolute;
+}
+.chart_data-point__label a {
+  margin: 0;
+  font-size: small;
+}
+.chart_line-segment {
+  background-color: rgba(128, 0, 128, 0.347);
+  height: 3px;
+  position: absolute;
+  transform-origin: left bottom;
+}
+
 * {
   box-sizing: border-box;
 }

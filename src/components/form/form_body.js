@@ -8,12 +8,12 @@ const FormBody = (props) => {
   );
 
   bill = bill.length <= 0 ? null : bill[0];
-  console.log(bill);
+  // console.log(bill);
   var date = null;
   if (bill != null) {
     const billDateArr = bill.date.split("-").reverse();
     date = billDateArr[0] + "-" + billDateArr[2] + "-" + billDateArr[1];
-    console.log(date);
+    // console.log(date);
   }
 
   return (
