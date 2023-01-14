@@ -13,17 +13,17 @@
 
 html {
   font-family: sans-serif;
-  min-height: 100vh;
-  background-image: linear-gradient(
-    360deg,
-    rgba(128, 0, 128, 0.452),
-    rgba(128, 0, 128, 0.562)
-  );
+  min-height: 100rem;
   background-size: cover;
 }
 
 body {
   margin: 0;
+  background: linear-gradient(
+    360deg,
+    rgba(128, 0, 128, 0.452),
+    rgba(128, 0, 128, 0.562)
+  );
 }
 
 button {

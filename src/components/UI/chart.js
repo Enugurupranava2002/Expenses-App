@@ -18,7 +18,7 @@ const Chart = (props) => {
   props.items.forEach((bill) => {
     monthlyExpenses[new Date(bill.date).getMonth()].tot += +bill.amount;
   });
-  //   console.log(monthlyExpenses);
+  console.log(monthlyExpenses);
 };
 
 export default Chart;

@@ -24,7 +24,7 @@ const Bills = (props) => {
           selected={billFilterCat}
           onChangeFilter={filterCatChangeHandler}
         />
-        {/* <Chart items={filteredBills} /> */}
+        <Chart items={filteredBills} />
         <BillList billsList={filteredBills} />
       </Card>
     </div>

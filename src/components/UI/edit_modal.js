@@ -35,6 +35,10 @@ const Modal = (props) => {
     bill.date = bill.date = bill.date.split("-").reverse().join("-");
     dispatch(billActions.updateBill({ id, bill }));
     dispatch(modalActions.showEditWindow(false));
+    descRef.current.value = null;
+    catRef.current.value = null;
+    amtRef.current.value = null;
+    dateRef.current.value = null;
   };
 
   return (

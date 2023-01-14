@@ -9,6 +9,12 @@ const FormBody = (props) => {
 
   bill = bill.length <= 0 ? null : bill[0];
   console.log(bill);
+  var date = null;
+  if (bill != null) {
+    const billDateArr = bill.date.split("-").reverse();
+    date = billDateArr[0] + "-" + billDateArr[2] + "-" + billDateArr[1];
+    console.log(date);
+  }
 
   return (
     <div className="new-bill__controls">
@@ -46,11 +52,7 @@ const FormBody = (props) => {
         <label>
           Date<span className="star">*</span>
         </label>
-        <input
-          ref={props.dateRef}
-          type="date"
-          defaultValue={bill?.date.split("-").reverse().join("-")}
-        ></input>
+        <input ref={props.dateRef} type="date" defaultValue={date}></input>
       </div>
     </div>
   );
