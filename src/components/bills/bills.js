@@ -12,10 +12,19 @@ const Bills = (props) => {
     setBillFilterCat(value);
   };
 
-  const filteredBills =
+  var filteredBills =
     billFilterCat === "all"
       ? props.items
       : props.items.filter((bill) => bill.category === billFilterCat);
+
+  console.log(filteredBills);
+
+  filteredBills = filteredBills
+    .slice()
+    .sort((bill1, bill2) => new Date(bill1.date) - new Date(bill2.date))
+    .reverse();
+
+  console.log(filteredBills);
 
   return (
     <div className="bills">

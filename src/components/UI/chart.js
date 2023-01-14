@@ -18,17 +18,21 @@ const Chart = (props) => {
     { mon: "Dec", tot: 0 },
   ];
 
+  const dateBefore12Mon = new Date().setMonth(new Date().getMonth() - 12);
+
+  const billsOfLast12Mon = props.items.filter(
+    (bill) => new Date(bill.date) >= dateBefore12Mon
+  );
+
   var maxBillAmt = 0;
 
-  props.items.forEach((bill) => {
+  billsOfLast12Mon.forEach((bill) => {
     monthlyExpenses[new Date(bill.date).getMonth()].tot += +bill.amount;
   });
 
   monthlyExpenses.forEach(
     (monthBill) => (maxBillAmt = Math.max(maxBillAmt, monthBill.tot))
   );
-
-  // console.log(maxBillAmt);
 
   const [height, setHeight] = useState(0);
   const [width, setWidth] = useState(0);
@@ -50,14 +54,18 @@ const Chart = (props) => {
   var bottom = 0;
 
   var coord = [];
-
-  monthlyExpenses.forEach((item) => {
-    left += (width - 10) / 12;
-    bottom = (+item.tot / maxBillAmt) * (height - 20);
-    coord.push({ x: left, y: bottom });
-  });
-
+  var sin = [];
   var hypt = [];
+
+  for (let index = 0; index < 12; index++) {
+    coord.push({ x: 0, y: 0 });
+  }
+
+  monthlyExpenses.forEach((item, idx, _) => {
+    left += (width - 10) / 12;
+    bottom = maxBillAmt === 0 ? 0 : (+item.tot / maxBillAmt) * (height - 20);
+    coord[idx] = { x: left, y: bottom };
+  });
 
   coord.forEach((co, idx, _) => {
     if (idx !== coord.length - 1) {
@@ -70,8 +78,6 @@ const Chart = (props) => {
     }
   });
 
-  var sin = [];
-
   coord.forEach((item, idx, _) => {
     if (idx === coord.length - 1) {
       return;
@@ -81,8 +87,6 @@ const Chart = (props) => {
     sin.push(-val);
   });
 
-  console.log(sin);
-
   return (
     <div className="chart">
       <Card>
@@ -91,15 +95,17 @@ const Chart = (props) => {
             {monthlyExpenses.map((item, idx, _) => {
               return (
                 <li key={item.mon}>
-                  <div
-                    className="chart_line-segment"
-                    style={{
-                      left: coord[idx].x,
-                      bottom: coord[idx].y,
-                      width: hypt[idx],
-                      transform: `rotate(calc(${sin[idx]} * 1deg))`,
-                    }}
-                  ></div>
+                  {billsOfLast12Mon.length !== 0 && (
+                    <div
+                      className="chart_line-segment"
+                      style={{
+                        left: coord[idx].x,
+                        bottom: coord[idx].y,
+                        width: hypt[idx],
+                        transform: `rotate(calc(${sin[idx]} * 1deg))`,
+                      }}
+                    ></div>
+                  )}
                   <div
                     style={{
                       left: coord[idx].x - 6.5,

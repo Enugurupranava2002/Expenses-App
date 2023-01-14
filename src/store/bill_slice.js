@@ -7,7 +7,7 @@ const initialBillState = {
       description: "Dominoes",
       category: "FoodNDining",
       amount: "430",
-      date: "01-02-2020",
+      date: "01-02-2022",
     },
     {
       id: 2,
@@ -21,21 +21,21 @@ const initialBillState = {
       description: "Amazon",
       category: "shopping",
       amount: "2030",
-      date: "03-07-2020",
+      date: "03-07-2022",
     },
     {
       id: 4,
       description: "House rent",
       category: "Food & Dining",
       amount: "35900",
-      date: "04-03-2020",
+      date: "04-03-2022",
     },
     {
       id: 5,
       description: "Tuition",
       category: "education",
       amount: "2200",
-      date: "05-12-2020",
+      date: "05-12-2022",
     },
     {
       id: 6,
@@ -49,7 +49,7 @@ const initialBillState = {
       description: "Vacation",
       category: "Travel",
       amount: "3430",
-      date: "07-18-2020",
+      date: "07-18-2022",
     },
   ],
 };
