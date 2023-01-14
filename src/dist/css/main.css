@@ -272,6 +272,39 @@
   transform-origin: left bottom;
 }
 
+.minimum-bud {
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  position: relative;
+}
+.minimum-bud__in {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+.minimum-bud__in label {
+  margin: 0.5rem;
+  align-self: center;
+}
+.minimum-bud__in input {
+  border-radius: 10px;
+  padding: 0.4rem;
+  width: 8rem;
+  height: 2rem;
+  align-self: center;
+}
+.minimum-bud__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-self: center;
+  margin: auto;
+}
+.minimum-bud__actions button {
+  align-self: center;
+}
+
 * {
   box-sizing: border-box;
 }

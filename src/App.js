@@ -16,14 +16,16 @@ function App() {
   );
 
   return (
-    <div className="appCard">
+    <>
       {showDeleteConfirmModal && <DeleteConfirmModal />}
       {showEditModal && <Modal />}
-      <Card>
-        <NewBill />
-      </Card>
-      <Bills items={billsList} />
-    </div>
+      <div className="appCard">
+        <Card>
+          <NewBill />
+        </Card>
+        <Bills items={billsList} />
+      </div>
+    </>
   );
 }
 

@@ -1,0 +1,33 @@
+.minimum-bud {
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  position: relative;
+
+  &__in {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    label {
+      margin: 0.5rem;
+      align-self: center;
+    }
+    input {
+      border-radius: 10px;
+      padding: 0.4rem;
+      width: 8rem;
+      height: 2rem;
+      align-self: center;
+    }
+  }
+  &__actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-self: center;
+    margin: auto;
+    button {
+      align-self: center;
+    }
+  }
+}
