@@ -1,0 +1,25 @@
+.card {
+  background-color: white;
+  border-radius: 10px;
+  // width: 50%;
+  margin: 0 auto;
+  margin-top: 5%;
+  border: 1px solid gray;
+  // box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.47);
+}
+
+.card:hover {
+  box-shadow: 3px 8px 8px rgba(0, 0, 0, 0.47);
+}
+
+@media only screen and (max-width: 500px) {
+  .card {
+    margin-top: 2%;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .card {
+    margin-top: 4%;
+  }
+}

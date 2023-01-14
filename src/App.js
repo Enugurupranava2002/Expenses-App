@@ -1,23 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import "./dist/css/main.css";
+
+import NewBill from "./components/form/new_bill";
+import Card from "./components/UI/card";
+import Bills from "./components/bills/bills";
+import { useSelector } from "react-redux";
+import Modal from "./components/UI/edit_modal";
+import DeleteConfirmModal from "./components/UI/delete_confirm_modal";
 
 function App() {
+  const billsList = useSelector((state) => state.bills.items);
+
+  const showEditModal = useSelector((state) => state.modal.showEditModal);
+  const showDeleteConfirmModal = useSelector(
+    (state) => state.modal.showDeleteConfirmModal
+  );
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="appCard">
+      {showDeleteConfirmModal && <DeleteConfirmModal />}
+      {showEditModal && <Modal />}
+      <Card>
+        <NewBill />
+      </Card>
+      <Bills items={billsList} />
     </div>
   );
 }

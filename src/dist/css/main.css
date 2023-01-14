@@ -1,0 +1,273 @@
+.card {
+  background-color: white;
+  border-radius: 10px;
+  margin: 0 auto;
+  margin-top: 5%;
+  border: 1px solid gray;
+}
+
+.card:hover {
+  box-shadow: 3px 8px 8px rgba(0, 0, 0, 0.47);
+}
+
+@media only screen and (max-width: 500px) {
+  .card {
+    margin-top: 2%;
+  }
+}
+@media only screen and (max-width: 800px) {
+  .card {
+    margin-top: 4%;
+  }
+}
+.new-bill__controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 1rem;
+  text-align: left;
+  padding-top: 1rem;
+}
+
+.new-bill__control label {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  display: block;
+  text-align: left;
+}
+.new-bill__control input {
+  font: inherit;
+  padding: 0.5rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  width: 21rem;
+  max-width: 100%;
+}
+
+.new-bill__actions {
+  text-align: right;
+  padding-bottom: 1rem;
+  padding-right: 1rem;
+}
+.new-bill__actions button {
+  padding: 0.5rem;
+  margin: 0.5rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background-color: rgba(128, 0, 128, 0.461);
+  color: white;
+}
+
+.bill-date {
+  display: flex;
+  flex-direction: column;
+  width: 5.5rem;
+  height: 5.5rem;
+  border: 1px solid #ececec;
+  background-color: rgba(128, 0, 128, 0.562);
+  color: white;
+  border-radius: 10px 0 0 10px;
+  align-items: center;
+  justify-content: center;
+}
+.bill-date__month {
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+.bill-date__year {
+  font-size: 0.75rem;
+}
+.bill-date__day {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.bill-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(185, 177, 185, 0.562);
+  border-radius: 10px;
+}
+.bill-item__description {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  align-items: flex-end;
+  flex-flow: column-reverse;
+  justify-content: flex-start;
+  flex: 1;
+}
+.bill-item h2 {
+  font-size: 1rem;
+  flex: 1;
+  margin: 0 1rem;
+}
+.bill-item__amount {
+  height: 3rem;
+  width: 3.5rem;
+  font-size: 1rem;
+  margin: 1rem;
+  font-weight: bold;
+  border: 1px solid white;
+  padding: 0.5rem;
+  border-radius: 10px;
+  padding-top: 0.8rem;
+}
+.bill-item h4 {
+  font-weight: 400;
+}
+.bill-item__icons {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-left: 1rem;
+}
+
+@media (min-width: 580px) {
+  .bill-item__description {
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    flex: 1;
+  }
+  .bill-item__description h2 {
+    font-size: 1.25rem;
+  }
+  .bill-item__description__amount {
+    font-size: 1.25rem;
+    padding: 0.5rem 1.5rem;
+  }
+}
+.darkBackGround {
+  background-color: rgba(0, 0, 0, 0.2);
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+}
+
+.modal {
+  position: fixed;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  height: 40%;
+  opacity: 0.9;
+}
+.modal-header {
+  height: 50px;
+  background: white;
+  overflow: hidden;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+}
+.modal h5 {
+  margin: 0;
+  padding: 10px;
+  color: #2c3e50;
+  font-weight: 500;
+  font-size: 18px;
+  text-align: center;
+}
+.modal-content {
+  padding: 10px;
+  font-size: 14px;
+  color: #2c3e50;
+  text-align: center;
+}
+.modal-actions {
+  bottom: 2px;
+  margin-bottom: 10px;
+  width: 100%;
+}
+.modal-close {
+  cursor: pointer;
+  font-weight: 500;
+  padding: 4px 8px;
+  border-radius: 8px;
+  border: none;
+  font-size: 18px;
+  color: #2c3e50;
+  background: white;
+  transition: all 0.25s ease;
+  box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.06);
+  position: absolute;
+  right: 0;
+  top: 0;
+  align-self: flex-end;
+  margin-top: -7px;
+  margin-right: -7px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: sans-serif;
+  min-height: 100vh;
+  background-image: linear-gradient(360deg, rgba(128, 0, 128, 0.452), rgba(128, 0, 128, 0.562));
+  background-size: cover;
+}
+
+body {
+  margin: 0;
+}
+
+button {
+  padding: 0.5rem;
+  margin: 0.5rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background-color: rgba(128, 0, 128, 0.562);
+  color: white;
+}
+
+button:hover {
+  cursor: pointer;
+  box-shadow: 5px 5px 5px 1px rgba(0, 0, 0, 0.5);
+}
+
+div {
+  text-align: center;
+}
+
+.star {
+  color: red;
+}
+
+.addNewButton {
+  font-size: 15px;
+  padding: 1rem;
+}
+
+.appCard {
+  width: 50%;
+  margin: 0 auto;
+}
+
+li {
+  margin: 0 1rem 1rem 1rem;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 0.2rem;
+}
+
+i {
+  color: rgba(128, 0, 128, 0.562);
+}
+i:hover {
+  cursor: pointer;
+  color: rgba(128, 0, 128, 0.347);
+}/*# sourceMappingURL=main.css.map */
