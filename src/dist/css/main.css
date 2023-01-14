@@ -105,7 +105,7 @@
 }
 .bill-item__amount {
   height: 3rem;
-  width: 3.5rem;
+  width: 4rem;
   font-size: 1rem;
   margin: 1rem;
   font-weight: bold;
@@ -204,6 +204,30 @@
   align-self: flex-end;
   margin-top: -7px;
   margin-right: -7px;
+}
+
+.bills-filter {
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+}
+.bills-filter__control {
+  align-items: center;
+  justify-content: space-between;
+}
+.bills-filter__control label {
+  margin-right: 2rem;
+  text-align: center;
+  font-size: medium;
+  font-weight: 500;
+}
+.bills-filter__control select {
+  border-radius: 5px;
+  width: auto;
+  padding: 0.4rem;
+}
+.bills-filter__control select option {
+  text-align: center;
 }
 
 * {

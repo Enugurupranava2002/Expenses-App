@@ -1,0 +1,25 @@
+.bills-filter {
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+
+  &__control {
+    align-items: center;
+    justify-content: space-between;
+    label {
+      margin-right: 2rem;
+      text-align: center;
+      font-size: medium;
+      font-weight: 500;
+    }
+    select {
+      border-radius: 5px;
+      width: auto;
+      padding: 0.4rem;
+
+      option {
+        text-align: center;
+      }
+    }
+  }
+}
