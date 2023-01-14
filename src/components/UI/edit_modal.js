@@ -1,4 +1,5 @@
 import { useDispatch } from "react-redux";
+import { useRef } from "react";
 
 import { modalActions } from "../../store/modal_slice";
 import "../../dist/css/main.css";
@@ -12,9 +13,18 @@ const Modal = (props) => {
     dispatch(modalActions.showEditWindow(false));
   };
 
+  const bgClick = () => {
+    dispatch(modalActions.showEditWindow(false));
+  };
+
+  const descRef = useRef();
+  const catRef = useRef();
+  const dateRef = useRef();
+  const amtRef = useRef();
+
   return (
     <>
-      <div className="darkBackGround"></div>
+      <div className="darkBackGround" onClick={bgClick}></div>
       <div className="modal">
         <Card>
           <div className="modal-header">
@@ -25,7 +35,12 @@ const Modal = (props) => {
               close
             </i>
           </button>
-          <FormBody />
+          <FormBody
+            descRef={descRef}
+            catRef={catRef}
+            dateRef={dateRef}
+            amtRef={amtRef}
+          />
           <div className="modal-actions">
             <button>Confirm</button>
             <button onClick={closeEditModal}>Cancel</button>

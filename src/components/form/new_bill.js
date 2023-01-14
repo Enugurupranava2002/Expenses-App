@@ -17,9 +17,18 @@ const NewBill = () => {
     setIsFillingForm(false);
   };
 
+  const closeForm = () => {
+    setIsFillingForm(false);
+  };
+
   return (
     <div>
-      {isFillingForm && <Form notFillingFormHandler={notFillingFormHandler} />}
+      {isFillingForm && (
+        <Form
+          notFillingFormHandler={notFillingFormHandler}
+          closeForm={closeForm}
+        />
+      )}
       {!isFillingForm && (
         <div>
           <button className="addNewButton" onClick={fillingFormHandler}>

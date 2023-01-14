@@ -9,6 +9,10 @@ const DeleteConfirmModal = (props) => {
   const dispatch = useDispatch();
   const id = useSelector((state) => state.modal.elementId);
 
+  const bgClick = () => {
+    dispatch(modalActions.showDeleteConfirmModalWindow(false));
+  };
+
   const closeDeleteConfirmModal = (event) => {
     event.preventDefault();
 
@@ -24,7 +28,7 @@ const DeleteConfirmModal = (props) => {
 
   return (
     <>
-      <div className="darkBackGround"></div>
+      <div className="darkBackGround" onClick={bgClick}></div>
       <div className="modal">
         <Card>
           <div className="modal-header">

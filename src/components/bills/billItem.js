@@ -17,6 +17,9 @@ const BillItem = (props) => {
   };
 
   const editBill = (event) => {
+    event.preventDefault();
+    const id = event.target.closest("li").id;
+    dispatch(modalActions.setElementId(id));
     dispatch(modalActions.showEditWindow(true));
   };
 

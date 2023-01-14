@@ -25,9 +25,11 @@ const billSlice = createSlice({
   reducers: {
     delete(state, actionId) {
       state.items = state.items.filter((bill) => {
-        console.log(bill["id"], actionId);
         return bill["id"].toString() !== actionId.payload.toString();
       });
+    },
+    add(state, action) {
+      state.items = [...state.items, action.payload];
     },
   },
 });
