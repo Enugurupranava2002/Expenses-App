@@ -64,7 +64,24 @@ const billSlice = createSlice({
       });
     },
     add(state, action) {
-      state.items = [...state.items, action.payload];
+      const bill = action.payload;
+      const billDateArr = bill.date.split("-");
+      bill.date = billDateArr[1] + "-" + billDateArr[0] + "-" + billDateArr[2];
+      state.items = [...state.items, bill];
+    },
+    updateBill(state, action) {
+      var bill = state.items.filter(
+        (bill) => bill.id.toString() === action.payload.id.toString()
+      )[0];
+      state.items = state.items.filter(
+        (bill) => bill.id.toString() !== action.payload.id.toString()
+      );
+      console.log(action.payload);
+      bill = { ...bill, ...action.payload.bill };
+      const billDateArr = bill.date.split("-");
+      bill.date = billDateArr[1] + "-" + billDateArr[0] + "-" + billDateArr[2];
+      console.log(bill);
+      state.items = [bill, ...state.items];
     },
   },
 });

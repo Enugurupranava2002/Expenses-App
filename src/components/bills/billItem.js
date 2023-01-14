@@ -25,7 +25,7 @@ const BillItem = (props) => {
 
   return (
     // <div></div>
-    <li id={props.id}>
+    <li id={props.id} key={props.id}>
       <Card>
         <div className="bill-item">
           <BillDate date={props.date}></BillDate>

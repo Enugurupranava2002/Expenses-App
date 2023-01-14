@@ -21,7 +21,10 @@ const Form = (props) => {
     userInputData["description"] = descRef.current.value;
     userInputData["category"] = catRef.current.value;
     userInputData["amount"] = amtRef.current.value;
-    userInputData["date"] = dateRef.current.value;
+    userInputData["date"] = dateRef.current.value
+      .split("-")
+      .reverse()
+      .join("-");
 
     // console.log(userInputData);
     dispatch(billActions.add(userInputData));

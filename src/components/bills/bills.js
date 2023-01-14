@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "../../dist/css/main.css";
 import Card from "../UI/card";
+import Chart from "../UI/chart";
 import BillFilter from "./billFilter";
 import BillList from "./billList";
 
@@ -23,6 +24,7 @@ const Bills = (props) => {
           selected={billFilterCat}
           onChangeFilter={filterCatChangeHandler}
         />
+        {/* <Chart items={filteredBills} /> */}
         <BillList billsList={filteredBills} />
       </Card>
     </div>

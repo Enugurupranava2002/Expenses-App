@@ -4,7 +4,7 @@ import "../../dist/css/main.css";
 const FormBody = (props) => {
   const id = useSelector((state) => state.modal.elementId);
   var bill = useSelector((state) => state.bills.items).filter(
-    (bill) => bill.id.toString() === id.toString()
+    (bill) => bill.id?.toString() === id?.toString()
   );
 
   bill = bill.length <= 0 ? null : bill[0];
