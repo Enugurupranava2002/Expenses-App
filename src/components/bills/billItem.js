@@ -27,7 +27,16 @@ const BillItem = (props) => {
     // <div></div>
     <li id={props.id} key={props.id}>
       <Card>
-        <div className="bill-item">
+        <div
+          className="bill-item"
+          style={{
+            backgroundColor: `${
+              props.canBePaid
+                ? "rgba(172, 255, 47, 0.400)"
+                : "rgba(185, 177, 185, 0.562)"
+            }`,
+          }}
+        >
           <BillDate date={props.date}></BillDate>
           <div className="bill-item__description">
             <h2 id="description">{props.description}</h2>

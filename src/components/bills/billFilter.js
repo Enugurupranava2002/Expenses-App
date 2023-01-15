@@ -6,9 +6,11 @@ const BillFilter = (props) => {
     props.onChangeFilter(event.target.value);
   };
 
-  const categoriesList = useSelector((state) => state.bills.items)
-    .filter((value, index, bill) => bill.indexOf(value) === index)
-    .map((bill) => bill.category);
+  const categoriesList = [
+    ...new Set(
+      useSelector((state) => state.bills.items).map((bill) => bill.category)
+    ),
+  ];
 
   return (
     <div className="bills-filter">
