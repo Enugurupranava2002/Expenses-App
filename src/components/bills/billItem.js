@@ -37,7 +37,9 @@ const BillItem = (props) => {
             }`,
           }}
         >
-          <BillDate date={props.date}></BillDate>
+          <div>
+            <BillDate date={props.date}></BillDate>
+          </div>
           <div className="bill-item__description">
             <h2 id="description">{props.description}</h2>
             <h4 className="bill-item__category">{props.category}</h4>

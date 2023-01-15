@@ -90,7 +90,16 @@ const Chart = (props) => {
   return (
     <div className="chart">
       <Card>
-        <figure ref={ref}>
+        <figure className="chart-figure" ref={ref}>
+          <div
+            style={{
+              bottom: height - 8,
+              left: width - 105,
+            }}
+            className="chart-heading"
+          >
+            Last 12 Months...
+          </div>
           <ul className="chart_line-chat">
             {monthlyExpenses.map((item, idx, _) => {
               return (
