@@ -121,7 +121,7 @@ const Chart = (props) => {
                         left: -7.5,
                       }}
                     >
-                      <a>{item.mon}</a>
+                      <a href="#">{item.mon}</a>
                     </div>
                   </div>
                 </li>
