@@ -117,11 +117,13 @@ const Chart = (props) => {
                     <div
                       className="chart_data-point__label"
                       style={{
-                        bottom: -coord[idx].y - 25,
+                        bottom: -coord[idx].y - 24,
                         left: -7.5,
                       }}
                     >
-                      <a href="/">{item.mon}</a>
+                      <div className="chart_data-point__label-name">
+                        {item.mon}
+                      </div>
                     </div>
                   </div>
                 </li>

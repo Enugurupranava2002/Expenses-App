@@ -29,7 +29,8 @@
     &__label {
       rotate: -90deg;
       position: absolute;
-      a {
+      &-name {
+        padding: 0;
         margin: 0;
         font-size: small;
       }
