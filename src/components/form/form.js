@@ -4,6 +4,7 @@ import { v4 as uuid } from "uuid";
 
 import "../../dist/css/main.css";
 import { billActions } from "../../store/bill_slice";
+import { modalActions } from "../../store/modal_slice";
 import FormBody from "./form_body";
 
 const Form = (props) => {
@@ -28,6 +29,7 @@ const Form = (props) => {
 
     // console.log(userInputData);
     dispatch(billActions.add(userInputData));
+    dispatch(modalActions.setElementId(-1));
     descRef.current.value = null;
     catRef.current.value = null;
     amtRef.current.value = null;

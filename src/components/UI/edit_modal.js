@@ -11,10 +11,12 @@ const Modal = (props) => {
   const dispatch = useDispatch();
 
   const closeEditModal = () => {
+    dispatch(modalActions.setElementId(-1));
     dispatch(modalActions.showEditWindow(false));
   };
 
   const bgClick = () => {
+    dispatch(modalActions.setElementId(-1));
     dispatch(modalActions.showEditWindow(false));
   };
 
@@ -33,6 +35,7 @@ const Modal = (props) => {
       date: dateRef.current.value,
     };
     bill.date = bill.date = bill.date.split("-").reverse().join("-");
+    dispatch(modalActions.setElementId(-1));
     dispatch(billActions.updateBill({ id, bill }));
     dispatch(modalActions.showEditWindow(false));
     descRef.current.value = null;

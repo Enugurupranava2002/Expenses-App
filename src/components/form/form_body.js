@@ -3,6 +3,7 @@ import "../../dist/css/main.css";
 
 const FormBody = (props) => {
   const id = useSelector((state) => state.modal.elementId);
+  console.log(id);
   var bill = useSelector((state) => state.bills.items).filter(
     (bill) => bill.id?.toString() === id?.toString()
   );
